@@ -27,7 +27,7 @@ local PlayerData              = {}
 Citizen.CreateThread(function ()
   while ESX == nil do
     TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    Citizen.Wait(0)
+    Citizen.Wait(500)
  	PlayerData = ESX.GetPlayerData()
   end
 end)
@@ -74,7 +74,7 @@ end)
 --key controls
 Citizen.CreateThread(function ()
   while true do
-    Citizen.Wait(0)
+    Citizen.Wait(50)
 
       local playerPed = GetPlayerPed(-1)
 
@@ -171,7 +171,7 @@ end)
 -- Enter / Exit marker events
 Citizen.CreateThread(function ()
   while true do
-    Wait(0)
+    Wait(500)
 
     local coords      = GetEntityCoords(GetPlayerPed(-1))
     local isInMarker  = false
