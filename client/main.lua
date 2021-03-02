@@ -10,7 +10,7 @@ local Keys = {
 }
 
 
---- action functions
+--- Functions
 local CurrentAction           = nil
 local CurrentActionMsg        = ''
 local CurrentActionData       = {}
@@ -18,7 +18,7 @@ local HasAlreadyEnteredMarker = false
 local LastZone                = nil
 
 
---- esx
+--- ESX
 local GUI = {}
 ESX                           = nil
 GUI.Time                      = 0
@@ -42,7 +42,7 @@ AddEventHandler('esx:setJob', function(job)
   PlayerData.job = job
 end)
 
--- Markkerit
+-- Zones Check
 AddEventHandler('lion_duty:hasEnteredMarker', function (zone)
   if zone == 'AmbulanceDuty' then
     CurrentAction     = 'ambulance_duty'
@@ -96,7 +96,7 @@ Citizen.CreateThread(function ()
             Wait(1000)
           end
         else
-          ESX.ShowNotification(_U('notmec'), 'error', 5000)
+          ESX.ShowNotification(_U('notwljob'), 'error', 5000)
           Wait(1000)
         end
       end
@@ -112,7 +112,7 @@ Citizen.CreateThread(function ()
             Wait(1000)
           end
         else
-          ESX.ShowNotification(_U('notamb'), 'error', 5000)
+          ESX.ShowNotification(_U('notwljob'), 'error', 5000)
           Wait(1000)
         end
       end
@@ -128,7 +128,7 @@ Citizen.CreateThread(function ()
           Wait(1000)
         end
       else
-        ESX.ShowNotification(_U('nottaxi'), 'error', 5000)
+        ESX.ShowNotification(_U('notwljob'), 'error', 5000)
         Wait(1000)
       end
     end
@@ -144,7 +144,7 @@ Citizen.CreateThread(function ()
             Wait(1000)
           end
         else
-          ESX.ShowNotification(_U('notpol'), 'error', 5000)
+          ESX.ShowNotification(_U('notwljob'), 'error', 5000)
           Wait(1000)
           end
         end
@@ -197,7 +197,7 @@ Citizen.CreateThread(function ()
   end
 end)
 
---notification
+-- Shows Notification
 function sendNotification(xSource, message, messageType, messageTimeout)
   TriggerClientEvent("pNotify:SendNotification", xSource, {
       text = message,

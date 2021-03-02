@@ -50,9 +50,7 @@ AddEventHandler('duty:taxi', function(job)
 	
 end)
 
-
-
---notification
+-- Shows Notification
 function sendNotification(xSource, message, messageType, messageTimeout)
     TriggerClientEvent("pNotify:SendNotification", xSource, {
         text = message,
