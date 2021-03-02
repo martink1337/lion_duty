@@ -84,6 +84,11 @@ Citizen.CreateThread(function ()
       DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 
       if IsControlPressed(0, Keys['E']) then
+
+        -- Cooldown
+        Citizen.Wait(50)
+        -- Debug Print
+        print("[lion_duty] - Someone changed duty status!")
 		
         if CurrentAction == 'mechanic_duty' then
           if PlayerData.job.name == 'mechanic' or PlayerData.job.name == 'offjob' then
@@ -153,7 +158,9 @@ Citizen.CreateThread(function ()
   end       
 end)
 
--- Display markers
+-- Display markers (Uncomment it if you going to use it [Not Recommended - High Client Side Usage])
+
+--[[
 Citizen.CreateThread(function ()
   while true do
     Wait(0)
@@ -167,6 +174,7 @@ Citizen.CreateThread(function ()
     end
   end
 end)
+]]--
 
 -- Enter / Exit marker events
 Citizen.CreateThread(function ()
