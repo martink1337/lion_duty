@@ -14,6 +14,8 @@
 - Download https://github.com/martink1337/lion_duty.git
 - Put it in the `resources` folder 
 
+(Don't forget to import the SQL file)
+
 ## Installation	
 - Add this in your `server.cfg`:
 ```bash
