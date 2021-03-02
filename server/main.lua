@@ -8,8 +8,8 @@ AddEventHandler('duty:police', function(job)
         local _source = source
         local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if xPlayer.job.name == "police" or "offpolice" then
-		xPlayer.setJob(xPlayer.job.name=="police" and "offpolice" or "police", xPlayer.job.grade)
+	if xPlayer.job.name == "police" or "offjob" then
+		xPlayer.setJob(xPlayer.job.name=="police" and "offjob" or "police", xPlayer.job.grade)
 	end
 	
 end)
@@ -20,20 +20,20 @@ AddEventHandler('duty:ambulance', function(job)
 		local _source = source
 		local xPlayer = ESX.GetPlayerFromId(_source)
 
-	if xPlayer.job.name == "ambulance" or "offambulance" then
-		xPlayer.setJob(xPlayer.job.name=="ambulance" and "offambulance" or "ambulance", xPlayer.job.grade)
+	if xPlayer.job.name == "ambulance" or "offjob" then
+		xPlayer.setJob(xPlayer.job.name=="ambulance" and "offjob" or "ambulance", xPlayer.job.grade)
 	end
 	
 end)
 
-RegisterServerEvent('duty:mecano')
-AddEventHandler('duty:mecano', function(job)
+RegisterServerEvent('duty:mechanic')
+AddEventHandler('duty:mechanic', function(job)
 	
 		local _source = source
 		local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if xPlayer.job.name == "mecano" or "offmecano" then
-		xPlayer.setJob(xPlayer.job.name=="mecano" and "offmecano" or "mecano", xPlayer.job.grade)
+	if xPlayer.job.name == "mechanic" or "offjob" then
+		xPlayer.setJob(xPlayer.job.name=="mechanic" and "offjob" or "mechanic", xPlayer.job.grade)
 	end
 	
 end)
@@ -44,8 +44,8 @@ AddEventHandler('duty:taxi', function(job)
 		local _source = source
 		local xPlayer = ESX.GetPlayerFromId(_source)
 	
-	if xPlayer.job.name == "taxi" or "offtaxi" then
-		xPlayer.setJob(xPlayer.job.name=="taxi" and "offtaxi" or "taxi", xPlayer.job.grade)
+	if xPlayer.job.name == "taxi" or "offjob" then
+		xPlayer.setJob(xPlayer.job.name=="taxi" and "offjob" or "taxi", xPlayer.job.grade)
 	end
 	
 end)

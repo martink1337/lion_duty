@@ -55,7 +55,7 @@ AddEventHandler('lion_duty:hasEnteredMarker', function (zone)
     CurrentActionData = {}
   end
   if zone == 'MecanoDuty' then
-    CurrentAction     = 'mecano_duty'
+    CurrentAction     = 'mechanic_duty'
     CurrentActionMsg  = _U('duty')
     CurrentActionData = {}
   end
@@ -85,10 +85,10 @@ Citizen.CreateThread(function ()
 
       if IsControlPressed(0, Keys['E']) then
 		
-        if CurrentAction == 'mecano_duty' then
-          if PlayerData.job.name == 'mecano' or PlayerData.job.name == 'offmecano' then
-            TriggerServerEvent('duty:mecano')
-          if PlayerData.job.name == 'mecano' then
+        if CurrentAction == 'mechanic_duty' then
+          if PlayerData.job.name == 'mechanic' or PlayerData.job.name == 'offjob' then
+            TriggerServerEvent('duty:mechanic')
+          if PlayerData.job.name == 'mechanic' then
             ESX.ShowNotification(_U('offduty'), 'success', 2500)
             Wait(1000)
           else
@@ -102,7 +102,7 @@ Citizen.CreateThread(function ()
       end
 	  
         if CurrentAction == 'ambulance_duty' then
-          if PlayerData.job.name == 'ambulance' or PlayerData.job.name == 'offambulance' then
+          if PlayerData.job.name == 'ambulance' or PlayerData.job.name == 'offjob' then
             TriggerServerEvent('duty:ambulance')
           if PlayerData.job.name == 'ambulance' then
             ESX.ShowNotification(_U('offduty'), 'success', 2500)
@@ -118,7 +118,7 @@ Citizen.CreateThread(function ()
       end
 
       if CurrentAction == 'taxi_duty' then
-        if PlayerData.job.name == 'taxi' or PlayerData.job.name == 'offtaxi' then
+        if PlayerData.job.name == 'taxi' or PlayerData.job.name == 'offjob' then
           TriggerServerEvent('duty:taxi')
         if PlayerData.job.name == 'taxi' then
           ESX.ShowNotification(_U('offduty'), 'success', 2500)
@@ -134,7 +134,7 @@ Citizen.CreateThread(function ()
     end
 
         if CurrentAction == 'police_duty' then
-          if PlayerData.job.name == 'police' or PlayerData.job.name == 'offpolice' then
+          if PlayerData.job.name == 'police' or PlayerData.job.name == 'offjob' then
             TriggerServerEvent('duty:police')
           if PlayerData.job.name == 'police' then
             ESX.ShowNotification(_U('offduty'), 'success', 2500)
